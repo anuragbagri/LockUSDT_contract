@@ -1,39 +1,30 @@
-# <h1 align="center"> Forge Template </h1>
+# Lock Contract with Custom ERC-20 Token
 
-**Template repository for getting started quickly with Foundry projects**
+This project implements a **Lock Contract** on **Foundry** that allows users to lock a custom ERC-20 token for a specified time period.
 
-![Github Actions](https://github.com/foundry-rs/forge-template/workflows/CI/badge.svg)
+## Features
 
-## Getting Started
+- **Custom ERC-20 Token**: A token built on top of the ERC-20 standard.
+- **Lock Mechanism**: Users can lock tokens for a defined duration.
+- **Time-Locked Withdrawals**: Tokens can only be withdrawn after the lock period expires.
 
-Click "Use this template" on [GitHub](https://github.com/foundry-rs/forge-template) to create a new repository with this repo as the initial state.
+## Project Structure
 
-Or, if your repo already exists, run:
-```sh
-forge init
-forge build
-forge test
-```
+- `Lock.sol`: Handles the locking logic.
+- `CustomToken.sol`: Implements the custom ERC-20 token.
 
-## Writing your first test
+## Setup & Testing
 
-All you need is to `import forge-std/Test.sol` and then inherit it from your test contract. Forge-std's Test contract comes with a pre-instatiated [cheatcodes environment](https://book.getfoundry.sh/cheatcodes/), the `vm`. It also has support for [ds-test](https://book.getfoundry.sh/reference/ds-test.html)-style logs and assertions. Finally, it supports Hardhat's [console.log](https://github.com/brockelmore/forge-std/blob/master/src/console.sol). The logging functionalities require `-vvvv`.
+1. Install Foundry: [Guide](https://book.getfoundry.sh/getting-started/installation.html)
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/anuragbagri/LockUsdt_Contract.git
+   cd LockUsdt_Contract
+   ```
+3. Build and test:
 
-```solidity
-pragma solidity 0.8.10;
+   ```bash
+   forge build
+   forge test
 
-import "forge-std/Test.sol";
-
-contract ContractTest is Test {
-    function testExample() public {
-        vm.roll(100);
-        console.log(1);
-        emit log("hi");
-        assertTrue(true);
-    }
-}
-```
-
-## Development
-
-This project uses [Foundry](https://getfoundry.sh). See the [book](https://book.getfoundry.sh/getting-started/installation.html) for instructions on how to install and use Foundry.
+   ```
